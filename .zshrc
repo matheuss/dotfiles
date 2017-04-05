@@ -9,6 +9,9 @@ source $ZSH/oh-my-zsh.sh
 # TODO: check why this is necessary
 export SHELL='/usr/local/bin/zsh'
 
+# path
+export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
+
 # npm
 alias nis='npm i -S'
 alias nig='npm i -g'
