@@ -31,7 +31,6 @@ alias zeit='cd /Users/matheus/dev/zeit'
 alias a='atom .'
 alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
-alias gcnv='gc --no-verify'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
 alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
 
@@ -48,3 +47,10 @@ if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
 else
   eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
+
+# git stuff
+git_clone() {
+  git clone git@github.com:$1.git
+}
+alias gclone='git_clone' 
+alias gcnv='gc --no-verify'
