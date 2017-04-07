@@ -33,6 +33,7 @@ alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias gcnv='gc --no-verify'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
+alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
 
 # load nvm
 export NVM_DIR="$HOME/.nvm"
