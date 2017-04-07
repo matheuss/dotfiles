@@ -27,6 +27,7 @@ alias yrs='yarn run start'
 alias yrt='yarn run test'
 
 # misc
+alias zeit='cd /Users/matheus/dev/zeit'
 alias a='atom .'
 alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
