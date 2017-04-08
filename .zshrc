@@ -55,3 +55,7 @@ git_clone() {
 }
 alias gclone='git_clone' 
 alias gcnv='gc --no-verify'
+
+# gcloud
+if [ -f '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
