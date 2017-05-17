@@ -53,7 +53,7 @@ fi
 git_clone() {
   git clone git@github.com:$1.git
 }
-alias gclone='git_clone' 
+alias gclone='git_clone'
 alias gcnv='gc --no-verify'
 
 # gcloud
