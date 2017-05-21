@@ -46,6 +46,9 @@ alias gcnv='gc --no-verify'
 export NOW_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
 export API='https://api.zeit.co'
 
+# secret stuff
+source $HOME/.secrets
+
 # nvm takes forever to load, and since i almost never used it directly,
 # i don't need it to be loaded every time i open a new session
 init_nvm() {
