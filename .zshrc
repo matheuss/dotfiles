@@ -35,10 +35,6 @@ alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
 alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
 
-# load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # gpg agent via https://github.com/pstadler/keybase-gpg-github
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
   source ~/.gnupg/.gpg-agent-info
@@ -55,6 +51,16 @@ git_clone() {
 }
 alias gclone='git_clone'
 alias gcnv='gc --no-verify'
+
+# nvm takes forever to load, and since i almost never used it directly,
+# i don't need it to be loaded every time i open a new session
+init_nvm() {
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+}
+
+# instead, i can just add the `bin` folder to my PATH
+export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH
 
 # gcloud
 if [ -f '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
