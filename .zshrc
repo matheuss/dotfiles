@@ -42,6 +42,10 @@ git_clone() {
 alias gclone='git_clone'
 alias gcnv='gc --no-verify'
 
+# misc vars
+export NOW_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
+export API='https://api.zeit.co'
+
 # nvm takes forever to load, and since i almost never used it directly,
 # i don't need it to be loaded every time i open a new session
 init_nvm() {
