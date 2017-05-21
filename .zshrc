@@ -34,6 +34,8 @@ alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
 alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
+alias gpdb='gp && gp --tags && say ready for db && db && say ready to deploy'
+alias gpr='gp && gp --tags && say ready to release && release'
 
 # git stuff
 git_clone() {
