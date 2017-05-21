@@ -35,16 +35,6 @@ alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
 alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
 
-# gpg agent via https://github.com/pstadler/keybase-gpg-github
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
-
 # git stuff
 git_clone() {
   git clone git@github.com:$1.git
@@ -65,3 +55,13 @@ export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH
 # gcloud
 if [ -f '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# gpg agent via https://github.com/pstadler/keybase-gpg-github
+if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+  source ~/.gnupg/.gpg-agent-info
+  export GPG_AGENT_INFO
+  GPG_TTY=$(tty)
+  export GPG_TTY
+else
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+fi
