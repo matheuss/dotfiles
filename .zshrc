@@ -59,6 +59,10 @@ init_nvm() {
 # instead, i can just add the `bin` folder to my PATH
 export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH
 
+# make zsh's `time` not suck
+disable -r time
+alias time='time -p '
+
 # gcloud
 if [ -f '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 if [ -f '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
