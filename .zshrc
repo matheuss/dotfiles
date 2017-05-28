@@ -40,6 +40,16 @@ gclone() {
   git clone git@github.com:$1.git
 }
 alias gcnv='gc --no-verify'
+opr() {
+  local REMOTE=origin
+  if [ -n "$1" ]
+  then
+    REMOTE=$1
+  fi
+  local REPO=`git remote -v | grep -m 1 $REMOTE | awk -F '[:.]' '{print $3}'`
+  local BRANCH=`git rev-parse --abbrev-ref HEAD`
+  open "https://github.com/$REPO/pull/new/$BRANCH"
+}
 
 # misc vars
 export NOW_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
