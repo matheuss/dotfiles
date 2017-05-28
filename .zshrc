@@ -36,10 +36,9 @@ alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
 alias now='/Users/matheus/dev/zeit/now-cli/bin/now.js'
 alias gpdb='gp && gp --tags && say ready for db && db && say ready to deploy'
 alias gpr='gp && gp --tags && say ready to release && release'
-git_clone() {
+gclone() {
   git clone git@github.com:$1.git
 }
-alias gclone='git_clone'
 alias gcnv='gc --no-verify'
 
 # misc vars
