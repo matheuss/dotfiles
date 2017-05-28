@@ -52,7 +52,7 @@ opr() {
 }
 
 # misc vars
-export NOW_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
+export AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
 export API='https://api.zeit.co'
 
 # secret stuff
