@@ -50,6 +50,16 @@ opr() {
   local BRANCH=`git rev-parse --abbrev-ref HEAD`
   open "https://github.com/$REPO/pull/new/$BRANCH"
 }
+gpf() {
+  local REMOTE=origin
+  if [ -n "$1" ]
+  then
+    REMOTE=$1
+  fi
+  local BRANCH=`git rev-parse --abbrev-ref HEAD`
+
+  git push --set-upstream $REMOTE $BRANCH
+}
 
 # misc vars
 export AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
