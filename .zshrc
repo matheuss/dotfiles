@@ -60,6 +60,9 @@ gpf() {
 
   git push --set-upstream $REMOTE $BRANCH
 }
+alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
+alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall Finder'
+
 
 # misc vars
 export AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
