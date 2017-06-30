@@ -65,6 +65,7 @@ alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall 
 api() {
   http $ZEIT_API_URL$1 "${@:2}" "$ZEIT_API_AUTH"
 }
+alias dev='cd /Users/matheus/dev'
 
 # misc vars
 export ZEIT_API_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
