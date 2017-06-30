@@ -62,11 +62,13 @@ gpf() {
 }
 alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
 alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall Finder'
-
+api() {
+  http $ZEIT_API_URL$1 "${@:2}" "$ZEIT_API_AUTH"
+}
 
 # misc vars
-export AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
-export API='https://api.zeit.co'
+export ZEIT_API_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
+export ZEIT_API_URL='https://api.zeit.co'
 
 # secret stuff
 source $HOME/.secrets
