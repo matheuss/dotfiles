@@ -26,6 +26,7 @@ alias yra='yarn run app'
 alias yrd='yarn run dev'
 alias yrs='yarn run start'
 alias yrt='yarn run test'
+alias yr='yarn run'
 
 # misc aliases
 alias zeit='cd /Users/matheus/dev/zeit'
