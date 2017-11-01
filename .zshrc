@@ -54,7 +54,7 @@ opr() {
   local BRANCH=`git rev-parse --abbrev-ref HEAD`
   open "https://github.com/$REPO/pull/new/$BRANCH"
 }
-gpf() {
+gpft() {
   local REMOTE=origin
   if [ -n "$1" ]
   then
