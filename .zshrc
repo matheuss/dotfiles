@@ -35,7 +35,13 @@ alias now='flow-node /Users/matheus/dev/zeit/now-cli/src/now.js'
 alias gpdb='gp && gp --tags && say ready for db && db && say ready to deploy'
 alias gpr='gp && gp --tags && say ready to release && release'
 gclone() {
-  git clone git@github.com:$1.git
+  IFS='/' read org repo <<< "$1"
+  if [ -z "$repo" ]
+  then
+  repo=$org
+  org='zeit'
+  fi
+  git clone git@github.com:$org/$repo.git
 }
 alias gcnv='gc --no-verify'
 opr() {
