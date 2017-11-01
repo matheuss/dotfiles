@@ -6,9 +6,6 @@ plugins=(git osx history)
 
 source $ZSH/oh-my-zsh.sh
 
-# TODO: check why this is necessary
-export SHELL='/usr/local/bin/zsh'
-
 # path
 export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
 export PATH=/Users/matheus/dev/zeit/scripts:$PATH
