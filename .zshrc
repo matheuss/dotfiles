@@ -86,7 +86,7 @@ init_nvm() {
 }
 
 # instead, i can just add the `bin` folder to my PATH
-export PATH=$HOME/.nvm/versions/node/v7.9.0/bin:$PATH
+export PATH=$HOME/.nvm/versions/node/v8.9.0/bin:$PATH
 
 # make zsh's `time` not suck
 disable -r time
