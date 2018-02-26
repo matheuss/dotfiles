@@ -55,6 +55,14 @@ opr() {
   local BRANCH=`git rev-parse --abbrev-ref HEAD`
   open "https://github.com/$REPO/pull/new/$BRANCH"
 }
+ogh() {
+  # will either contain the full path of the current directory,
+  # relative to the repo root or nothing if the current directory
+  # is the repo root
+  local dir="$(git ls-tree --full-name --name-only HEAD ../$(basename $(pwd)) 2>/dev/null)"
+  local branch=`git rev-parse --abbrev-ref HEAD`
+  open "https://github.com/$(git remote -v | grep -m 1 origin | awk -F '[:.]' '{print $3}')/tree/$branch/$dir"
+}
 gpft() {
   local REMOTE=origin
   if [ -n "$1" ]
