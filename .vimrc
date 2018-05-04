@@ -68,6 +68,7 @@ set number
 set splitbelow
 set splitright
 set clipboard=unnamed
+set ttyfast
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
