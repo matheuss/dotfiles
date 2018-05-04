@@ -92,6 +92,34 @@ flush-routes() {
   sudo ifconfig en0 up
 }
 alias gce='gcloud compute'
+sgh() {
+  _type="Code"
+  org=""
+  query=""
+  while [ "$#" -gt 0 ]; do
+    case "$1" in
+      -i|--issues|-p|--pr|--prs) _type="Issues"; shift 1;;
+      --commit|--commits) _type="Commits"; shift 1;;
+      --code) _type="Code"; shfit 1;;
+      -w|--wiki|--wikis) _type="Wikis"; shift 1;;
+      -o|--org|--orgs) org+="$2"; shift 2;;
+      -r|--repo|--repos) _type="Repositories"; shift 1;;
+      -*)
+        echo >&2 "Unknown option \"$1\""
+        return 1
+        ;;
+      *) query+="$1 "; shift 1;;
+    esac
+  done
+
+  if [ "$org" != "" ]; then
+    query+="org:$org"
+  fi
+
+  query+="&type=$_type"
+
+  open "https://github.com/search?q=$query"
+}
 # secret stuff
 source $HOME/.secrets
 
