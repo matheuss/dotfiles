@@ -34,9 +34,8 @@ alias a='atom .'
 alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias evimrc='vi ~/.vimrc'
-alias spot='spot --exclude dist --exclude app/dist --exclude node_modules'
-alias now='flow-node /Users/matheus/dev/zeit/now-cli/src/now.js'
-alias gpdb='gp && gp --tags && say ready for db && db && say ready to deploy'
+alias spot='spot --exclude dist --exclude app/dist --exclude node_modules --exclude .next'
+alias gpdb='gp && gp --tags && db -y && say ready to deploy'
 alias gpr='gp && gp --tags && say ready to release && release'
 gclone() {
   IFS='/' read org repo <<< "$1"
