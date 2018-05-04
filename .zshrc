@@ -81,8 +81,6 @@ api() {
   http $ZEIT_API_URL$1 "${@:2}" "$ZEIT_API_AUTH"
 }
 alias dev='cd /Users/matheus/dev'
-alias http='time http'
-alias curl='time curl'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
 
