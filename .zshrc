@@ -86,6 +86,11 @@ alias vip='vi package.json'
 alias p8='ping 8.8.8.8'
 alias vi='vim'
 alias fix-dns='sudo killall -HUP mDNSResponder'
+flush-routes() {
+  sudo ifconfig en0 down
+  sudo route flush
+  sudo ifconfig en0 up
+}
 
 # secret stuff
 source $HOME/.secrets
