@@ -91,7 +91,7 @@ flush-routes() {
   sudo route flush
   sudo ifconfig en0 up
 }
-
+alias gce='gcloud compute'
 # secret stuff
 source $HOME/.secrets
 
