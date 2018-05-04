@@ -85,10 +85,6 @@ alias gpt='git push && git push --tags'
 alias vip='vi package.json'
 alias p8='ping 8.8.8.8'
 
-# misc vars
-export ZEIT_API_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
-export ZEIT_API_URL='https://api.zeit.co'
-
 # secret stuff
 source $HOME/.secrets
 
