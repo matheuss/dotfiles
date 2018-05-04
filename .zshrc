@@ -88,16 +88,6 @@ alias p8='ping 8.8.8.8'
 # secret stuff
 source $HOME/.secrets
 
-# nvm takes forever to load, and since i almost never used it directly,
-# i don't need it to be loaded every time i open a new session
-init_nvm() {
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-}
-
-# instead, i can just add the `bin` folder to my PATH
-export PATH=$HOME/.nvm/versions/node/v8.9.0/bin:$PATH
-
 # make zsh's `time` not suck
 disable -r time
 alias time='time -p '
