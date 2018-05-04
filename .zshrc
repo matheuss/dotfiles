@@ -1,4 +1,4 @@
-export ZSH=/Users/matheus/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="zeit"
 
@@ -8,8 +8,8 @@ source $ZSH/oh-my-zsh.sh
 
 # path
 export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
-export PATH=/Users/matheus/dev/zeit/scripts:$PATH
-export PATH=/Users/matheus/.config/yarn/global/node_modules/.bin:$PATH
+export PATH=$HOME/dev/zeit/scripts:$PATH
+export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 
 export EDITOR='vim'
 
@@ -29,7 +29,7 @@ alias yrt='yarn run test'
 alias yr='yarn run'
 
 # misc aliases
-alias zeit='cd /Users/matheus/dev/zeit'
+alias zeit='cd $HOME/dev/zeit'
 alias a='atom .'
 alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
@@ -80,7 +80,7 @@ alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall 
 api() {
   http $ZEIT_API_URL$1 "${@:2}" "$ZEIT_API_AUTH"
 }
-alias dev='cd /Users/matheus/dev'
+alias dev='cd $HOME/dev'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
 alias p8='ping 8.8.8.8'
@@ -128,8 +128,8 @@ disable -r time
 alias time='time -p '
 
 # gcloud
-if [ -f '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/matheus/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # gpg agent via https://github.com/pstadler/keybase-gpg-github
 if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
