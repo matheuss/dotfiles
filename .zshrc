@@ -85,6 +85,7 @@ alias gpt='git push && git push --tags'
 alias vip='vi package.json'
 alias p8='ping 8.8.8.8'
 alias vi='vim'
+alias fix-dns='sudo killall -HUP mDNSResponder'
 
 # secret stuff
 source $HOME/.secrets
