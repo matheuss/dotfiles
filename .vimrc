@@ -18,10 +18,10 @@ if dein#load_state('/Users/matheus/.vim/bundle')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('scrooloose/syntastic')
   call dein#add('joshdick/onedark.vim')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('w0rp/ale')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
