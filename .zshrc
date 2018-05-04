@@ -84,6 +84,7 @@ alias dev='cd /Users/matheus/dev'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
 alias p8='ping 8.8.8.8'
+alias vi='vim'
 
 # secret stuff
 source $HOME/.secrets
