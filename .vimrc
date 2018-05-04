@@ -85,3 +85,41 @@ au BufWritePost .vimrc so ~/.vimrc
 au! BufNewFile,BufRead,BufWrite * if getline(1) =~ '^\#!.*node' | setf javascript | endif
 
 let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$'
+
+let g:ale_javascript_eslint_use_global = 1
+let g:ale_javascript_eslint_executable = 'eslint_d'
+
+let g:ale_linters = {
+\   'jsx': ['eslint'],
+\}
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+
+let g:ale_fix_on_save = 1
+
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✔' : printf(
+  \   '%dW %dE',
+  \   all_non_errors,
+  \   all_errors
+  \)
+endfunction
+
+set laststatus=2
+set statusline=%f\ %y\ %=%l,%c
+set statusline+=\ [%{LinterStatus()}]
+
+let mapleader = ","
+
+map <Leader>l : ALENext<cr>
+
+
+:inoremap ( ()<Esc>i
+:inoremap ' ''<Esc>i
+:inoremap { {}<Esc>i
