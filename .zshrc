@@ -11,6 +11,8 @@ export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
 export PATH=/Users/matheus/dev/zeit/scripts:$PATH
 export PATH=/Users/matheus/.config/yarn/global/node_modules/.bin:$PATH
 
+export EDITOR='vim'
+
 # npm
 alias nis='npm i -S'
 alias nig='npm i -g'
