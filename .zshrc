@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 # path
 export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
 export PATH=/Users/matheus/dev/zeit/scripts:$PATH
+export PATH=/Users/matheus/.config/yarn/global/node_modules/.bin:$PATH
 
 # npm
 alias nis='npm i -S'
