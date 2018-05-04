@@ -83,6 +83,7 @@ api() {
 alias dev='cd /Users/matheus/dev'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
+alias p8='ping 8.8.8.8'
 
 # misc vars
 export ZEIT_API_AUTH="Authorization: Bearer `cat $HOME/.now.json | jq .token -r`"
