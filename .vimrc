@@ -119,7 +119,3 @@ let mapleader = ","
 
 map <Leader>l : ALENext<cr>
 
-
-:inoremap ( ()<Esc>i
-:inoremap ' ''<Esc>i
-:inoremap { {}<Esc>i
