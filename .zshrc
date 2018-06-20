@@ -36,8 +36,8 @@ alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
 alias evimrc='vi ~/.vimrc'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules --exclude .next'
-alias gpdb='gp && gp --tags && db -y && say ready to deploy'
-alias gpr='gp && gp --tags && say ready to release && release'
+alias gpdb='gp && gp --tags && db -y && _say ready to deploy'
+alias gpr='gp && gp --tags && _say ready to release && release'
 gclone() {
   IFS='/' read org repo <<< "$1"
   if [ -z "$repo" ]
@@ -120,6 +120,16 @@ sgh() {
   query+="&type=$_type"
 
   open "https://github.com/search?q=$query"
+}
+_say() {
+  # uses `say(1)` to say something if it's available
+  # (i.e. if we're on macOS)
+  # if not, just a no-op
+  if command -v say >/dev/null 2>&1; then
+    # we use & because `say` blocks
+    # we use `sh -c ''` because `&` prints some stuff we don't want to print
+    say $*
+  fi
 }
 # secret stuff
 source $HOME/.secrets
