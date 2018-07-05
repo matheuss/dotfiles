@@ -47,7 +47,6 @@ gclone() {
   fi
   git clone git@github.com:$org/$repo.git
 }
-alias gcnv='gc --no-verify'
 opr() {
   local REMOTE=origin
   if [ -n "$1" ]
