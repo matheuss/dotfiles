@@ -5,7 +5,7 @@ ZSH_THEME="zeit"
 plugins=(git osx history)
 
 source $ZSH/oh-my-zsh.sh
-
+source `which import`
 # path
 export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
 export PATH=$HOME/dev/zeit/scripts:$PATH
