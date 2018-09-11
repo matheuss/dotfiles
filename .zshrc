@@ -131,6 +131,15 @@ _say() {
     say $*
   fi
 }
+
+# better awk
+# bawk 1 = awk '{print $1}'
+# bawk 2 = awk '{print $2}'
+# etc
+bawk() {
+  awk "{print \$$1}"
+}
+
 # secret stuff
 source $HOME/.secrets
 
