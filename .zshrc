@@ -11,6 +11,7 @@ export PATH=/usr/local/Cellar/openvpn/2.4.1/sbin:$PATH
 export PATH=$HOME/dev/zeit/scripts:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 
 export EDITOR='vim'
 
