@@ -161,3 +161,6 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 #fi
 
 alias w='watch '
+
+alias p1='ping 1.1.1.1'
+alias p8='ping 8.8.8.8'
