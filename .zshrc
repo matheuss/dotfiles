@@ -12,6 +12,7 @@ export PATH=$HOME/dev/zeit/scripts:$PATH
 export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
+export PATH=/snap/bin:$PATH
 
 export EDITOR='vim'
 
@@ -146,11 +147,13 @@ if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/Do
 if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
 # gpg agent via https://github.com/pstadler/keybase-gpg-github
-if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
-  source ~/.gnupg/.gpg-agent-info
-  export GPG_AGENT_INFO
-  GPG_TTY=$(tty)
-  export GPG_TTY
-else
-  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
+#if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
+#  source ~/.gnupg/.gpg-agent-info
+#  export GPG_AGENT_INFO
+#  GPG_TTY=$(tty)
+#  export GPG_TTY
+#else
+#  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
+#fi
+
+alias w='watch '
