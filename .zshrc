@@ -1,3 +1,7 @@
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="zeit"
@@ -143,8 +147,8 @@ disable -r time
 alias time='time -p '
 
 # gcloud
-if [ -f '$HOME/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '$HOME/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc"; fi
 
 # gpg agent via https://github.com/pstadler/keybase-gpg-github
 #if test -f ~/.gnupg/.gpg-agent-info -a -n "$(pgrep gpg-agent)"; then
