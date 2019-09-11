@@ -17,6 +17,7 @@ export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=/snap/bin:$PATH
+export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 
 export EDITOR='vim'
 
