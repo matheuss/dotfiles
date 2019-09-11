@@ -22,6 +22,7 @@ if dein#load_state('$HOME/.vim/bundle')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('w0rp/ale')
+  call dein#add('leafgarland/typescript-vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -88,12 +89,16 @@ let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|sv
 
 let g:ale_javascript_eslint_use_global = 1
 let g:ale_javascript_eslint_executable = 'eslint_d'
+let g:ale_go_gofmt_options = '-s'
 
 let g:ale_linters = {
 \   'jsx': ['eslint'],
 \}
 let g:ale_fixers = {
 \   'javascript': ['eslint'],
+\   'typescript': ['prettier'],
+\   'go': ['gofmt'],
+\   'tf': ['terraform']
 \}
 
 let g:ale_fix_on_save = 1
@@ -118,4 +123,3 @@ set statusline+=\ [%{LinterStatus()}]
 let mapleader = ","
 
 map <Leader>l : ALENext<cr>
-
