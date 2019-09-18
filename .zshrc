@@ -84,9 +84,6 @@ gpft() {
 }
 alias hide_desktop='defaults write com.apple.finder CreateDesktop false; killall Finder'
 alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall Finder'
-api() {
-  http $ZEIT_API_URL$1 "${@:2}" "$ZEIT_API_AUTH"
-}
 alias dev='cd $HOME/dev'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
