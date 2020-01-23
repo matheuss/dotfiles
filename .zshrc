@@ -158,6 +158,8 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 #  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 #fi
 
+alias vm='mosh vm.matheus.sh -- tmux a'
+
 alias w='watch '
 
 alias p1='ping 1.1.1.1'
