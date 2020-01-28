@@ -169,3 +169,10 @@ function wq() {
   watch -n 0.5 $@
 }
 
+
+function openpr() {
+  local BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  local REMOTE="$(git remote get-url origin | awk -F : '{print $2}' | sed 's/\.git//')"
+
+  echo "https://github.com/$REMOTE/compare/$BRANCH?expand=1"
+}
