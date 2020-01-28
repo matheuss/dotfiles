@@ -164,3 +164,8 @@ alias w='watch '
 
 alias p1='ping 1.1.1.1'
 alias p8='ping 8.8.8.8'
+
+function wq() {
+  watch -n 0.5 $@
+}
+
