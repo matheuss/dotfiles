@@ -37,7 +37,7 @@ alias yrt='yarn run test'
 alias yr='yarn run'
 
 # misc aliases
-alias zeit='cd $HOME/dev/zeit'
+alias vf='cd $HOME/dev/vercel'
 alias a='atom .'
 alias jqsp='jq .scripts package.json'
 alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
