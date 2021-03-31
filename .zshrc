@@ -50,7 +50,7 @@ gclone() {
   if [ -z "$repo" ]
   then
   repo=$org
-  org='zeit'
+  org='vercel'
   fi
   git clone git@github.com:$org/$repo.git
 }
