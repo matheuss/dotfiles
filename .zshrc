@@ -176,3 +176,9 @@ function openpr() {
 
   echo "https://github.com/$REMOTE/compare/$BRANCH?expand=1"
 }
+
+get_cert_info () {
+  echo | openssl s_client -showcerts -servername ${2:=$1} -connect $1:443 2> /dev/null | openssl x509 -inform pem -noout -text | egrep -i 'validity|not before|not after|issuer|dns'
+}
+
+alias tf='terraform'
