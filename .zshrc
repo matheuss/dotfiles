@@ -29,30 +29,10 @@ eval "`fnm env`"
 
 export EDITOR='vim'
 
-# npm
-alias nis='npm i -S'
-alias nig='npm i -g'
-alias nid='npm i -D'
-
-# yarn
-alias ya='yarn add'
-alias yad='yarn add --dev'
-alias yag='yarn add --global'
-alias yra='yarn run app'
-alias yrd='yarn run dev'
-alias yrs='yarn run start'
-alias yrt='yarn run test'
-alias yr='yarn run'
-
 # misc aliases
 alias vf='cd $HOME/dev/vercel'
-alias a='atom .'
 alias jqsp='jq .scripts package.json'
-alias ezshrc='vi ~/.zshrc && source ~/.zshrc'
-alias evimrc='vi ~/.vimrc'
 alias spot='spot --exclude dist --exclude app/dist --exclude node_modules --exclude .next'
-alias gpdb='gp && gp --tags && db -y && _say ready to deploy'
-alias gpr='gp && gp --tags && _say ready to release && release'
 gclone() {
   IFS='/' read org repo <<< "$1"
   if [ -z "$repo" ]
@@ -61,24 +41,6 @@ gclone() {
   org='vercel'
   fi
   git clone git@github.com:$org/$repo.git
-}
-opr() {
-  local REMOTE=origin
-  if [ -n "$1" ]
-  then
-    REMOTE=$1
-  fi
-  local REPO=`git remote -v | grep -m 1 $REMOTE | awk -F '[:.]' '{print $3}'`
-  local BRANCH=`git rev-parse --abbrev-ref HEAD`
-  open "https://github.com/$REPO/pull/new/$BRANCH"
-}
-ogh() {
-  # will either contain the full path of the current directory,
-  # relative to the repo root or nothing if the current directory
-  # is the repo root
-  local dir="$(git ls-tree --full-name --name-only HEAD ../$(basename $(pwd)) 2>/dev/null)"
-  local branch=`git rev-parse --abbrev-ref HEAD`
-  open "https://github.com/$(git remote -v | grep -m 1 origin | awk -F '[:.]' '{print $3}')/tree/$branch/$dir"
 }
 gpft() {
   local REMOTE=origin
@@ -95,7 +57,6 @@ alias show_desktop='defaults write com.apple.finder CreateDesktop true; killall 
 alias dev='cd $HOME/dev'
 alias gpt='git push && git push --tags'
 alias vip='vi package.json'
-alias p8='ping 8.8.8.8'
 alias vi='vim'
 alias fix_dns='sudo killall -HUP mDNSResponder'
 fix_routes() {
@@ -103,46 +64,6 @@ fix_routes() {
   sudo route flush
   sudo ifconfig en0 up
 }
-alias gce='gcloud compute'
-sgh() {
-  _type="Code"
-  org=""
-  query=""
-  while [ "$#" -gt 0 ]; do
-    case "$1" in
-      -i|--issues|-p|--pr|--prs) _type="Issues"; shift 1;;
-      --commit|--commits) _type="Commits"; shift 1;;
-      --code) _type="Code"; shfit 1;;
-      -w|--wiki|--wikis) _type="Wikis"; shift 1;;
-      -o|--org|--orgs) org+="$2"; shift 2;;
-      -r|--repo|--repos) _type="Repositories"; shift 1;;
-      -*)
-        echo >&2 "Unknown option \"$1\""
-        return 1
-        ;;
-      *) query+="$1 "; shift 1;;
-    esac
-  done
-
-  if [ "$org" != "" ]; then
-    query+="org:$org"
-  fi
-
-  query+="&type=$_type"
-
-  open "https://github.com/search?q=$query"
-}
-_say() {
-  # uses `say(1)` to say something if it's available
-  # (i.e. if we're on macOS)
-  # if not, just a no-op
-  if command -v say >/dev/null 2>&1; then
-    # we use & because `say` blocks
-    # we use `sh -c ''` because `&` prints some stuff we don't want to print
-    say $*
-  fi
-}
-
 import matheuss/bawk
 
 # secret stuff
@@ -168,21 +89,8 @@ if [ -f "$HOME/Downloads/google-cloud-sdk/completion.zsh.inc" ]; then source "$H
 
 alias vm='mosh vm.matheus.sh -- tmux a'
 
-alias w='watch '
-
-alias p1='ping 1.1.1.1'
-alias p8='ping 8.8.8.8'
-
 function wq() {
   watch -n 0.5 $@
-}
-
-
-function openpr() {
-  local BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-  local REMOTE="$(git remote get-url origin | awk -F : '{print $2}' | sed 's/\.git//')"
-
-  echo "https://github.com/$REMOTE/compare/$BRANCH?expand=1"
 }
 
 get_cert_info () {
