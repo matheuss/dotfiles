@@ -18,6 +18,14 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=/snap/bin:$PATH
 [ `uname` = 'Darwin' ] && export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
+# pnpm
+export PNPM_HOME="/home/matheus/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# fnm
+export PATH=/home/matheus/.fnm:$PATH
+eval "`fnm env`"
 
 export EDITOR='vim'
 
