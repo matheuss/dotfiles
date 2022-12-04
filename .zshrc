@@ -193,9 +193,11 @@ get_ips_from_cidr() {
   # source: https://stackoverflow.com/questions/16986879/bash-script-to-list-all-ips-in-prefix/44001530
   nmap -sL -n $1 | awk '/Nmap scan report/{print $NF}'
 }
+
 unalias gcm
 gcm() {
    branch="$(basename "$(git symbolic-ref --short refs/remotes/origin/HEAD)")"
    git checkout "$branch"
 }
+
 alias tf='terraform'
