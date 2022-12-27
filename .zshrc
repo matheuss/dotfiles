@@ -4,7 +4,7 @@ export LANGUAGE=en_US.UTF-8
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="zeit"
+ZSH_THEME="vercel"
 
 plugins=(git osx history)
 
