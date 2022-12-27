@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-
-bkp_and_link () {
-  mv ~/"$1" ~/"$1.bkp"
+rm_link () {
+  rm ~/"$1"
   ln -s "$(pwd)/$1" ~/"$1"
 }
 
-bkp_and_link .zshrc
-bkp_and_link .tmux.conf
-bkp_and_link .vimrc
+rm_link .zshrc
+rm_link .tmux.conf
+rm_link .vimrc
+rm_link .gitconfig
