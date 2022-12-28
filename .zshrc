@@ -17,6 +17,7 @@ export PATH=$HOME/.config/yarn/global/node_modules/.bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=/snap/bin:$PATH
+export PATH=/home/matheus/.local/share/neovim/bin:$PATH
 [ `uname` = 'Darwin' ] && export PATH=$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH
 # pnpm
 export PNPM_HOME="/home/matheus/.local/share/pnpm"

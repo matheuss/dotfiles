@@ -7,7 +7,6 @@ if has('syntax')
 endif
 
 syntax on
-highlight Normal ctermbg=black
 
 nnoremap ; :
 
@@ -45,3 +44,11 @@ set laststatus=2
 set statusline=%f\ %y\ %=%l,%c
 
 let mapleader = ","
+
+" packer stuff
+" install with: git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.config/nvim/pack/packer/start/packer.nvim
+
+lua require('plugins')
+
+highlight Normal ctermbg=black
+colorscheme dracula
