@@ -7,10 +7,7 @@ if has('syntax')
 endif
 
 syntax on
-" curl -sO https://github.com/joshdick/onedark.vim/blob/main/colors/onedark.vim
-" curl -sO https://raw.githubusercontent.com/joshdick/onedark.vim/main/autoload/onedark.vim
 highlight Normal ctermbg=black
-colorscheme onedark
 
 nnoremap ; :
 
