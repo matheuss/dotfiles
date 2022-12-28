@@ -9,3 +9,5 @@ rm_link .zshrc
 rm_link .tmux.conf
 rm_link .vimrc
 rm_link .gitconfig
+mkdir ~/.config
+rm_link .config/nvim
